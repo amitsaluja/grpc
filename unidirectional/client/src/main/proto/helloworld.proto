@@ -1,0 +1,27 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.grpc.examples";
+option java_outer_classname = "GreetingProto";
+option objc_class_prefix = "GRTNG";
+
+package examples;
+
+
+service  greeting {
+    //call remote  greet method
+    rpc greet(greetReq) returns (greetResponse){};
+}
+
+message greetReq {
+   string  greetTo = 1;
+
+
+}
+
+
+message greetResponse {
+   string  responseMessage = 1;
+
+}
